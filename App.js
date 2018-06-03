@@ -3,6 +3,7 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import RootNavigation from './navigation/RootNavigation';
+import { Header, Badge } from 'react-native-elements';
 
 export default class App extends React.Component {
   state = {
@@ -21,6 +22,9 @@ export default class App extends React.Component {
     } else {
       return (
         <View style={styles.container}>
+        <Header
+        centerComponent={{ text: 'Wedding Games', style: { color: '#fff' } }}
+        />
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           <RootNavigation />
         </View>
